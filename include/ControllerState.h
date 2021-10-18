@@ -12,6 +12,7 @@ typedef struct {
     int move_right_button_s;
     int pir_left_s; 
     int pir_right_s; 
+    int full_stop_btn;
 
 } state_package;  
 
@@ -31,6 +32,7 @@ class ControllerState {
         int move_right_button_s = 0;
         int pir_left_s = 0; 
         int pir_right_s = 0; 
+        int full_stop_btn = 0;
 
         void notify(const char* channel, int data);
 

@@ -7,7 +7,7 @@
 #include <PubSubClient.h>
 #include <WiFiClient.h>
 
-#define NUMBER_OF_INPUTS 6
+#define NUMBER_OF_INPUTS 7
 
 // pinos de entrada analógicos
 #define BASE_POT 33
@@ -23,6 +23,8 @@
 #define LED_COM 18
 #define LED_INIT 19
 
+// pino do botão de parada total
+#define FULL_STOP 20
 
 char* ssid = "Cesar"; 
 char* pass = "pedro0908fernandes"; 
@@ -43,7 +45,8 @@ InputHandler input_handler(
     BASE_POT,
     CORPO_POT,
     PIR_SENSOR_01,
-    PIR_SENSOR_02
+    PIR_SENSOR_02,
+    FULL_STOP
 );
 
 

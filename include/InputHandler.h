@@ -15,7 +15,8 @@ class InputHandler {
             int base_potentiometer_pin, 
             int body_potentiometer_pin, 
             int pir_left_pin, 
-            int pir_right_pin
+            int pir_right_pin,
+            int full_stop_btn_pin
         );
 
     private:
@@ -25,6 +26,7 @@ class InputHandler {
         int body_potentiometer_pin; 
         int pir_left_pin; 
         int pir_right_pin;
+        int full_stop_btn_pin;
         ControllerState& current_state;
         
 };

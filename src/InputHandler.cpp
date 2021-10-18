@@ -8,7 +8,8 @@ InputHandler::InputHandler(
     int base_potentiometer_pin, 
     int body_potentiometer_pin, 
     int pir_left_pin, 
-    int pir_right_pin
+    int pir_right_pin,
+    int full_stop_btn_pin
 ): current_state(current_state) 
 {
     this->current_state = current_state;
@@ -23,13 +24,14 @@ InputHandler::InputHandler(
 
 void InputHandler::setup_pins() 
 {
-    int pins[6] = {    
+    int pins[7] = {    
         this->button_left_pin, 
         this->button_right_pin, 
         this->base_potentiometer_pin, 
         this->body_potentiometer_pin, 
         this->pir_left_pin, 
-        this->pir_right_pin
+        this->pir_right_pin,
+        this->full_stop_btn_pin
     }; 
 
     for (int i = 0; i < 6; i++)
@@ -50,6 +52,7 @@ void InputHandler::loop()
 
     state_readings.pir_left_s = digitalRead(this->pir_left_pin); 
     state_readings.pir_right_s = digitalRead(this->pir_right_pin);
+    state_readings.full_stop_btn = digitalRead(this->full_stop_btn_pin);
 
 
     this->current_state.set_state(state_readings);

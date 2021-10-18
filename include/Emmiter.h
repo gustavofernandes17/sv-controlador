@@ -22,6 +22,7 @@ class Emmiter {
 
         const char* pir_left = "controlador/left"; 
         const char* pir_right = "controlador/right";
+        const char* full_stop_channel = "controlador/stop";
 
         void setup(char* host, int host_port, char* device_id);
         Emmiter(
