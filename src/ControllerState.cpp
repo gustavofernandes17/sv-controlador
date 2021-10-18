@@ -79,6 +79,17 @@ void ControllerState::set_state(state_package state_from_readings)
             map(this->body_potentiometer_s, 0, 4095, 0, 180)
         );
     }
+
+    // botão de parada total
+
+    if (state_from_readings.full_stop_btn != this->full_stop_btn) {
+        this->full_stop_btn = state_from_readings.full_stop_btn; 
+
+        this->notify(
+            this->emmiter_observer->full_stop_channel, 
+            this->full_stop_btn
+        );
+    }
   
 }
 
